@@ -1,6 +1,6 @@
 const POST_DATA = [
     {
-        "path": "binance-fee-explain.html",
+        "path": "binance-fee-explain",
         "title": "Binance Fees Explained: Spot, Futures, Options & Full Comparison With Other Exchanges (2026 Guide)",
         "category": "Finance",
         "date": "January 15, 2026",
@@ -8,7 +8,7 @@ const POST_DATA = [
         "thumbnail": "images/binance-fees-guide-2026.png"
     },
     {
-        "path": "spot-vs-future.html",
+        "path": "spot-vs-future",
         "title": "Spot vs Futures Trading – Which One Is Better for Small Accounts in 2026?",
         "category": "Finance",
         "date": "January 16, 2026",
@@ -16,7 +16,7 @@ const POST_DATA = [
         "thumbnail": "images/spotvfuture.png"
     },
     {
-        "path": "Best-Crypto-Exchanges-for-Low-Fees.html",
+        "path": "Best-Crypto-Exchanges-for-Low-Fees",
         "title": "Best Crypto Exchanges for Low Fees in 2026 (Real Comparison Table)",
         "category": "Finance",
         "date": "January 12, 2026",
@@ -24,7 +24,7 @@ const POST_DATA = [
         "thumbnail": "images/best-crypto-exchanges-low-fees-2026.png"
     },
     {
-        "path": "why-your-profit-look-good-but-your-balance-not-grow.html",
+        "path": "why-your-profit-look-good-but-your-balance-not-grow",
         "title": "Why Your Profits Look Good but Your Balance Doesn’t Grow (The 2026 Fee Trap)",
         "category": "Finance",
         "date": "December 5, 2025",
@@ -32,7 +32,7 @@ const POST_DATA = [
         "thumbnail": "images/whynotgrow.png"
     },
     {
-        "path": "which-exchange-has-the-best-liquidity-for-small-caps.html",
+        "path": "which-exchange-has-the-best-liquidity-for-small-caps",
         "title": "Which Exchange Has the Best Liquidity for Small Caps in 2026?",
         "category": "Finance",
         "date": "January 10, 2026",
@@ -40,7 +40,7 @@ const POST_DATA = [
         "thumbnail": "images/whichexvhan.png"
     },
     {
-        "path": "zero-fee-trading.html",
+        "path": "zero-fee-trading",
         "title": "Zero Fee Trading: The Ultimate Guide to Avoiding Hidden Costs in 2026",
         "category": "Finance",
         "date": "January 12, 2026",
@@ -49,7 +49,7 @@ const POST_DATA = [
     }
     ,
     {
-        "path": "is-it-too-late.html",
+        "path": "is-it-too-late",
         "title": "Is It Too Late to Buy Bitcoin in 2026? (The Post-Halving Reality)",
         "category": "Crypto",
         "date": "Dec 5, 2025",
@@ -77,7 +77,7 @@ function initWidgets() {
     if (categoryContainer) {
         const categories = [...new Set(POST_DATA.map(p => p.category))];
         categoryContainer.innerHTML = categories.map(cat => `
-            <li><a href="index.html?filter=${encodeURIComponent(cat.toLowerCase())}">${cat}</a></li>
+            <li><a href="index?filter=${encodeURIComponent(cat.toLowerCase())}">${cat}</a></li>
         `).join('');
     }
 }
