@@ -16,11 +16,11 @@
 
     <header>
         <nav>
-            <a href="index.html" class="logo">Hyper Hustle</a>
+            <a href="index" class="logo">Hyper Hustle</a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">Deploy Application</a></li>
-                <li><a href="tools.html">Tools</a></li>
+                <li><a href="index" class="active">Home</a></li>
+                <li><a href="about">Deploy Application</a></li>
+                <li><a href="tools">Tools</a></li>
                
             </ul>
         </nav>
@@ -32,7 +32,7 @@
     <div class="container">
         <main>
     <div class="breadcrumb">
-        <a href="index.html">Home</a> > <span>DMCA Policy</span>
+        <a href="index">Home</a> > <span>DMCA Policy</span>
     </div>
     
     <article>
@@ -97,40 +97,18 @@
     <div class="footer-content">
 
         <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="dmca.html">DMCA</a>
-            <a href="terms-and-conditions.html">Terms and Conditions</a>
-            <a href="disclaimer.html">Disclaimer</a>
+            <a href="index">Home</a>
+            <a href="about">About Us</a>
+            <a href="contact">Contact</a>
+            <a href="dmca">DMCA</a>
+            <a href="terms-and-conditions">Terms and Conditions</a>
+            <a href="disclaimer">Disclaimer</a>
         </div>
         <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
 
     </div>
 </footer>
     <script src="widgets.js"></script>
-    <script>
-        // Use the POST_DATA from widgets.js to populate the sidebar
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof POST_DATA !== 'undefined') {
-                const recentContainer = document.getElementById('recent-posts-widget');
-                const catContainer = document.getElementById('categories-widget');
 
-                // Fill Recent Posts
-                recentContainer.innerHTML = POST_DATA.slice(0, 5).map(post => `
-                    <div class="post-card">
-                        <img src="${post.thumbnail}" class="post-thumbnail">
-                        <h3 class="post-title"><a href="${post.path}">${post.title}</a></h3>
-                    </div>
-                `).join('');
-
-                // Fill Categories
-                const categories = [...new Set(POST_DATA.map(p => p.category))];
-                catContainer.innerHTML = categories.map(cat => `
-                    <li><a href="index.html?filter=${cat.toLowerCase()}">${cat}</a></li>
-                `).join('');
-            }
-        });
-    </script>
 </body>
 </html>
