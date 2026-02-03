@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Hyper Hustle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Hyper Hustle</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Deploy Application</a></li>
+                <li><a href="tools.html">Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="blog-list">
+            </main>
+<aside>
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Recent Posts</h2>
+        <div id="recent-posts-widget">
+            </div>
+    </div>
+
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Categories</h2>
+        <ul class="categories-list" id="categories-widget">
+            </ul>
+    </div>
+</aside>
+
+<script src="widgets.js"></script>
+
+
+    </div>
+<footer>
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="dmca.html">DMCA</a>
+            <a href="terms-and-conditions.html">Terms and Conditions</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
+    </div>
+</footer>
+    <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const blogContainer = document.getElementById('blog-list');
+
+function renderBlogList() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filter = urlParams.get('filter');
+
+    // Filter using the central POST_DATA from widgets.js
+    const filteredPosts = filter 
+        ? POST_DATA.filter(post => post.category.toLowerCase() === filter.toLowerCase())
+        : POST_DATA;
+
+    if (filteredPosts.length === 0) {
+        blogContainer.innerHTML = `<div class="error-message"><h2>No posts found in "${filter}"</h2><a href="index.html">Show all posts</a></div>`;
+        return;
+    }
+
+    // Display "Showing category: X" if filter is active
+    let headerHtml = filter ? `<h2 style="margin-bottom:20px; color:var(--primary-color);">Category: ${filter.charAt(0).toUpperCase() + filter.slice(1)}</h2>` : '';
+
+    blogContainer.innerHTML = headerHtml + filteredPosts.map(blog => `
+        <div class="blog-card">
+            <img src="${blog.thumbnail}" class="blog-thumbnail">
+            <div class="blog-content">
+                <a href="index.html?filter=${blog.category.toLowerCase()}" class="blog-category">${blog.category}</a>
+                <h2 class="blog-title"><a href="${blog.path}">${blog.title}</a></h2>
+                <div class="article-meta">By admin / ${blog.date}</div>
+                <p class="blog-excerpt">${blog.excerpt}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Ensure POST_DATA is loaded before rendering
+window.onload = renderBlogList;
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

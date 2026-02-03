@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - HyperHustle</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles-blogs.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Hyper Hustle</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Deploy Application</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <div class="container">
+        <main>
+<div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>About Us</span>
+    </div>
+            
+            <article>
+
+                
+                        <h1 class="article-title">About HyperHustle</h1>
+                        <div class="article-meta">Updated: February 2026</div>
+
+
+
+                <div class="content">
+<h2 id="wellcome">Welcome To HyperHustle</h2>
+
+            <p>
+                <strong>HyperHustle</strong> is a professional blog platform dedicated to the modern digital entrepreneur. Here, we provide only the most insightful and actionable content designed to help you navigate the fast-paced world of trading and online growth. 
+            </p>
+                    
+                    <div class="toc">
+                            <div class="toc-title">Table of Contents</div>
+                            <ul class="toc-list">
+                                <li><a href="#wellcome"><span class="toc-number">1.</span> Welcome to HyperHustle</a></li>
+                                <li><a href="#our-mission"><span class="toc-number">2.</span> Our Mission</a></li>
+                            </ul>
+                        </div>
+                    
+                    
+                    
+                    <p>
+                        We are dedicated to providing you with the best of resources, with a sharp focus on <strong>Trading Strategies, Premium Tools, and Financial Intelligence</strong>. We hope you enjoy our insights and resources as much as we enjoy offering them to you.
+                    </p>
+
+                I will keep posting more important posts and tool updates on my website for all of you. Please give your support and love.
+            </p>
+            
+            <p><strong>Thanks For Visiting Our Site!</strong><br>
+            Have a nice day!</p>
+
+            <hr>
+
+            <h2 id="our-mission">Our Mission</h2>
+
+            <p>
+            <strong>HyperHustle</strong>, where we believe that every trader’s journey deserves a competitive edge. Our platform was born from the idea that achieving financial freedom requires the right "hustle" combined with the right tools. 
+            </p>
+            <p>
+                Whether you are looking to master the markets, find the best software to automate your workflow, or discover new ways to grow your capital, HyperHustle is here to provide the fuel for your ambition. We specialize in sharing <strong>Trading Analysis, Tool Reviews, and Financial Hustles</strong> that fit the rhythm of today's digital economy.
+            </p>
+ 
+            
+                </div>
+            </article>
+        </main>
+
+<aside>
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Recent Posts</h2>
+        <div id="recent-posts-widget">
+            </div>
+    </div>
+
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Categories</h2>
+        <ul class="categories-list" id="categories-widget">
+            </ul>
+    </div>
+</aside>
+    </div>
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="dmca.html">DMCA</a>
+            <a href="terms-and-conditions.html">Terms and Conditions</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
+
+    </div>
+</footer>
+    <script src="widgets.js"></script>
+    <script>
+        // Use the POST_DATA from widgets.js to populate the sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof POST_DATA !== 'undefined') {
+                const recentContainer = document.getElementById('recent-posts-widget');
+                const catContainer = document.getElementById('categories-widget');
+
+                // Fill Recent Posts
+                recentContainer.innerHTML = POST_DATA.slice(0, 5).map(post => `
+                    <div class="post-card">
+                        <img src="${post.thumbnail}" class="post-thumbnail">
+                        <h3 class="post-title"><a href="${post.path}">${post.title}</a></h3>
+                    </div>
+                `).join('');
+
+                // Fill Categories
+                const categories = [...new Set(POST_DATA.map(p => p.category))];
+                catContainer.innerHTML = categories.map(cat => `
+                    <li><a href="index.html?filter=${cat.toLowerCase()}">${cat}</a></li>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

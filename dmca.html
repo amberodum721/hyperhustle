@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMCA Policy - HyperHustle</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles-blogs.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Hyper Hustle</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Deploy Application</a></li>
+                <li><a href="tools.html">Tools</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <div class="container">
+        <main>
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>DMCA Policy</span>
+    </div>
+    
+    <article>
+        <span class="article-category">Legal</span>
+        <h1 class="article-title">DMCA Notice for HyperHustle</h1>
+        <div class="article-meta">Effective Date: February 2026</div>
+
+        <div class="content">
+            <p>Welcome to the <strong>HyperHustle</strong> DMCA Notice. We respect the intellectual property rights of others and are committed to upholding the provisions of the <strong>Digital Millennium Copyright Act (DMCA)</strong>.</p>
+            
+            <p>If you believe that any material shared on our platform—including trading tools, scripts, or articles—infringes upon your copyright, please follow the procedure below to notify us.</p>
+
+            <hr>
+
+            <h2>Notice of Infringement</h2>
+            <p>To file a valid DMCA complaint, please ensure your notice includes the following information:</p>
+            <ul>
+                <li>A detailed description of the copyrighted work you believe has been infringed.</li>
+                <li>The <strong>exact URL</strong> or location on HyperHustle where the material is located.</li>
+                <li>Your full contact information (Name, Address, Phone number, and Email).</li>
+                <li>A statement of "Good Faith Belief" that the use of the material is not authorized by the copyright owner.</li>
+                <li>A statement, under penalty of perjury, that the information in your notice is accurate.</li>
+                <li>Your electronic or physical signature.</li>
+            </ul>
+
+            <h2>Filing a Complaint</h2>
+            <p>If we have mistakenly added content that belongs to you or your organization, we apologize sincerely. We assure you that it was unintentional and will not be repeated. To request removal, please contact us at:</p>
+            
+            <div style="background: #fff5f5; border-left: 5px solid #ff4d4d; padding: 15px; margin: 20px 0;">
+                <strong>Email:</strong> <a href="mailto:captaingranda@gmail.com">captaingranda@gmail.com</a>
+            </div>
+            
+            <p>I assure you that I will review your request and remove the infringing content <strong>within 48 hours</strong>.</p>
+
+            <hr>
+
+            <h2>Counter-Notification Procedure</h2>
+            <p>If you believe your content was removed or disabled by mistake (for example, if you have the rights to a specific tool or script), you may file a counter-notification. This must include your contact details, a description of the removed content, and a statement under penalty of perjury that the removal was a result of misidentification.</p>
+
+            <h2>Contact Information</h2>
+            <p>If you have any questions regarding our DMCA policies, feel free to reach out via our official support email or our Telegram <strong>@Gman1945</strong>.</p>
+        </div>
+    </article>
+</main>
+
+
+<aside>
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Recent Posts</h2>
+        <div id="recent-posts-widget">
+            </div>
+    </div>
+
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Categories</h2>
+        <ul class="categories-list" id="categories-widget">
+            </ul>
+    </div>
+</aside>
+    </div>
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="dmca.html">DMCA</a>
+            <a href="terms-and-conditions.html">Terms and Conditions</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
+
+    </div>
+</footer>
+    <script src="widgets.js"></script>
+    <script>
+        // Use the POST_DATA from widgets.js to populate the sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof POST_DATA !== 'undefined') {
+                const recentContainer = document.getElementById('recent-posts-widget');
+                const catContainer = document.getElementById('categories-widget');
+
+                // Fill Recent Posts
+                recentContainer.innerHTML = POST_DATA.slice(0, 5).map(post => `
+                    <div class="post-card">
+                        <img src="${post.thumbnail}" class="post-thumbnail">
+                        <h3 class="post-title"><a href="${post.path}">${post.title}</a></h3>
+                    </div>
+                `).join('');
+
+                // Fill Categories
+                const categories = [...new Set(POST_DATA.map(p => p.category))];
+                catContainer.innerHTML = categories.map(cat => `
+                    <li><a href="index.html?filter=${cat.toLowerCase()}">${cat}</a></li>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - HyperHustle</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles-blogs.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Hyper Hustle</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Deploy Application</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <div class="container">
+<main>
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>Terms and Conditions</span>
+    </div>
+    
+    <article>
+        <span class="article-category">Legal</span>
+        <h1 class="article-title">Terms and Conditions</h1>
+        <div class="article-meta">Last Updated: February 2026</div>
+
+        <div class="content">
+            <p>Welcome to <strong>HyperHustle</strong>. These terms and conditions outline the rules and regulations for the use of our website and the trading tools, resources, and content provided herein.</p>
+
+            <div class="toc">
+                <div class="toc-title">Table of Contents</div>
+                <ul class="toc-list">
+                    <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+                    <li><a href="#intellectual-property">2. Intellectual Property Rights</a></li>
+                    <li><a href="#restrictions">3. Restrictions</a></li>
+                    <li><a href="#liability">4. Limitation of Liability</a></li>
+                    <li><a href="#changes">5. Changes to Terms</a></li>
+                    <li><a href="#contact">6. Contact Information</a></li>
+                </ul>
+            </div>
+
+            <h2 id="acceptance">1. Acceptance of Terms</h2>
+            <p>By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use <strong>HyperHustle</strong> if you do not agree to all of the terms and conditions stated on this page.</p>
+
+            <h2 id="intellectual-property">2. Intellectual Property Rights</h2>
+            <p>Unless otherwise stated, <strong>HyperHustle</strong> and/or its licensors own the intellectual property rights for all material on this website, including specialized trading tools and scripts. All intellectual property rights are reserved. You may access this for your own personal use, subject to the restrictions set in these terms.</p>
+
+            <h2 id="restrictions">3. Restrictions</h2>
+            <p>You are specifically restricted from the following:</p>
+            <ul>
+                <li>Publishing any website material or tools in any other media without proper written credit.</li>
+                <li>Selling, sublicensing, or otherwise commercializing any <strong>HyperHustle</strong> content.</li>
+                <li>Using this website in any way that is damaging or impacts user access to the platform.</li>
+                <li>Engaging in data mining, data harvesting, or similar automated extraction activities.</li>
+                <li>Using this website to engage in unauthorized advertising or marketing.</li>
+            </ul>
+
+            <h2 id="liability">4. Limitation of Liability</h2>
+            <p>In no event shall <strong>HyperHustle</strong>, its owner, or its contributors be held liable for any financial losses or damages arising out of your use of our shared trading tools or informational content. Trading involves risk, and you use all provided resources at your own discretion.</p>
+
+            <h2 id="changes">5. Changes to These Terms</h2>
+            <p>We reserve the right to revise these terms at any time as we see fit. By using this website, you are expected to review these terms on a regular basis to ensure you understand all terms and conditions governing the use of this website.</p>
+
+            <h2 id="contact">6. Contact Us</h2>
+            <p>If you have any questions about these Terms and Conditions, please reach out via our official channels:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:captaingranda@gmail.com">captaingranda@gmail.com</a></li>
+                <li><strong>Telegram:</strong> <a href="https://t.me/Gman1945">@Gman1945</a></li>
+            </ul>
+        </div>
+    </article>
+</main>
+
+
+<aside>
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Recent Posts</h2>
+        <div id="recent-posts-widget">
+            </div>
+    </div>
+
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Categories</h2>
+        <ul class="categories-list" id="categories-widget">
+            </ul>
+    </div>
+</aside>
+    </div>
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="dmca.html">DMCA</a>
+            <a href="terms-and-conditions.html">Terms and Conditions</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
+
+    </div>
+</footer>
+    <script src="widgets.js"></script>
+    <script>
+        // Use the POST_DATA from widgets.js to populate the sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof POST_DATA !== 'undefined') {
+                const recentContainer = document.getElementById('recent-posts-widget');
+                const catContainer = document.getElementById('categories-widget');
+
+                // Fill Recent Posts
+                recentContainer.innerHTML = POST_DATA.slice(0, 5).map(post => `
+                    <div class="post-card">
+                        <img src="${post.thumbnail}" class="post-thumbnail">
+                        <h3 class="post-title"><a href="${post.path}">${post.title}</a></h3>
+                    </div>
+                `).join('');
+
+                // Fill Categories
+                const categories = [...new Set(POST_DATA.map(p => p.category))];
+                catContainer.innerHTML = categories.map(cat => `
+                    <li><a href="index.html?filter=${cat.toLowerCase()}">${cat}</a></li>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

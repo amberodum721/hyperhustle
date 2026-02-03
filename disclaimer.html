@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - HyperHustle</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="css/styles-blogs.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Hyper Hustle</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Deploy Application</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+    <div class="container">
+<main>
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>Disclaimer</span>
+    </div>
+    
+    <article>
+        <span class="article-category">Legal</span>
+        <h1 class="article-title">Disclaimer for HyperHustle</h1>
+        <div class="article-meta">Last Updated: February 2026</div>
+
+        <div class="content">
+            <p>The information provided by <strong>HyperHustle</strong> ("we," "us," or "our") on this website is for general informational purposes only. All information, including trading tools and scripts, is provided in good faith; however, we make no representation or warranty of any kind regarding its accuracy or completeness.</p>
+
+            <div class="toc">
+                <div class="toc-title">Table of Contents</div>
+                <ul class="toc-list">
+                    <li><a href="#external-links">1. External Links Disclaimer</a></li>
+                    <li><a href="#professional-disclaimer">2. Professional Disclaimer (Trading & Finance)</a></li>
+                    <li><a href="#affiliates">3. Affiliates Disclaimer</a></li>
+                    <li><a href="#errors-omissions">4. Errors and Omissions</a></li>
+                    <li><a href="#no-responsibility">5. No Responsibility Disclaimer</a></li>
+                </ul>
+            </div>
+
+            <h2 id="external-links">1. External Links Disclaimer</h2>
+            <p>HyperHustle may contain links to third-party websites or tools. We do not warrant, endorse, or assume responsibility for the accuracy or reliability of any information offered by third-party websites linked through our site. Use of third-party tools is at your own risk.</p>
+
+            <h2 id="professional-disclaimer">2. Professional Disclaimer (Trading & Finance)</h2>
+            <p><strong>The Site cannot and does not contain financial advice.</strong> All trading information and tools are provided for general informational and educational purposes only and are not a substitute for professional financial advice.</p>
+            <p>Trading involves significant risk of loss. Before taking any actions based on the tools or information shared on HyperHustle, we encourage you to consult with a certified financial professional. <strong>THE RELIANCE ON ANY INFORMATION CONTAINED ON THIS SITE IS SOLELY AT YOUR OWN RISK.</strong></p>
+
+            <h2 id="affiliates">3. Affiliates Disclaimer</h2>
+            <p>The Site may contain links to affiliate websites, and we may receive a commission for any purchases or registrations made by you on the affiliate website using such links. We only promote products or tools that we believe add value to the hustle community.</p>
+
+            <h2 id="errors-omissions">4. Errors and Omissions Disclaimer</h2>
+            <p>While we attempt to ensure that the tools and information on this site are obtained from reliable sources, HyperHustle is not responsible for any errors or omissions, or for the results obtained from the use of this information. All content is provided "as is" with no guarantee of timeliness or accuracy.</p>
+
+            <h2 id="no-responsibility">5. No Responsibility Disclaimer</h2>
+            <p>In no event shall HyperHustle or its contributors be liable for any special, incidental, indirect, or consequential damages whatsoever arising out of or in connection with your access or use (or inability to use) the website and its shared tools.</p>
+
+            <hr>
+
+            <h3>Contact Us</h3>
+            <p>If you have questions regarding this Disclaimer, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:captaingranda@gmail.com">captaingranda@gmail.com</a></li>
+                <li><strong>Telegram:</strong> <a href="https://t.me/Gman1945">@Gman1945</a></li>
+                <li><strong>WhatsApp:</strong> <a href="https://wa.me/94781424571">+94 781 424 571</a></li>
+            </ul>
+        </div>
+    </article>
+</main>
+
+
+<aside>
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Recent Posts</h2>
+        <div id="recent-posts-widget">
+            </div>
+    </div>
+
+    <div class="sidebar-section">
+        <h2 class="sidebar-title">Categories</h2>
+        <ul class="categories-list" id="categories-widget">
+            </ul>
+    </div>
+</aside>
+    </div>
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="dmca.html">DMCA</a>
+            <a href="terms-and-conditions.html">Terms and Conditions</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
+
+    </div>
+</footer>
+    <script src="widgets.js"></script>
+    <script>
+        // Use the POST_DATA from widgets.js to populate the sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof POST_DATA !== 'undefined') {
+                const recentContainer = document.getElementById('recent-posts-widget');
+                const catContainer = document.getElementById('categories-widget');
+
+                // Fill Recent Posts
+                recentContainer.innerHTML = POST_DATA.slice(0, 5).map(post => `
+                    <div class="post-card">
+                        <img src="${post.thumbnail}" class="post-thumbnail">
+                        <h3 class="post-title"><a href="${post.path}">${post.title}</a></h3>
+                    </div>
+                `).join('');
+
+                // Fill Categories
+                const categories = [...new Set(POST_DATA.map(p => p.category))];
+                catContainer.innerHTML = categories.map(cat => `
+                    <li><a href="index.html?filter=${cat.toLowerCase()}">${cat}</a></li>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>
