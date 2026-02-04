@@ -1,4 +1,58 @@
 const POST_DATA = [
+
+
+    {
+        "path": "High-Probability-Trading",
+        "title": "High-Probability Trading: The Best Scalping & Day Trading Strategies for 2026",
+        "category": "Strategies",
+        "date": "Jan 9, 2026",
+        "excerpt": "In the fast-paced markets of 2026, finding a 'holy grail' strategy is less about a single indicator and more about combining multiple tools and techniques.",
+        "thumbnail": "images/maxresdefault.jpg"
+    },    {
+        "path": "The-Triple-Threat-Strategy",
+        "title": "The Triple Threat Strategy: A High-Probability Trading Approach for 2026",
+        "category": "Strategies",
+        "date": "Jan 13, 2026",
+        "excerpt": "The Triple Threat Strategy combines three powerful elements to increase your odds of success in 2026's volatile markets.",
+        "thumbnail": "images/triplestrat.png"
+    },
+    {
+        "path": "Crypto-vs-Forex-vs-Stocks-Choosing-Your-Battlefield",
+        "title": "Crypto vs Forex vs Stocks: Choosing Your Battlefield in 2026",
+        "category": "Crypto",
+        "date": "Jan 10, 2026",
+        "excerpt": "In 2026, choosing the right financial battlefield is crucial. This article compares crypto, forex, and stocks to help you make an informed decision.",
+        "thumbnail": "images/cvfvsimage.png"
+    },
+    {
+        "path": "The-Best-Crypto-Indicators",
+        "title": "The Best Crypto Indicators for 2026: A Complete Guide",
+        "category": "Indicators",
+        "date": "Jan 11, 2026",
+        "excerpt": "Discover the most effective crypto indicators for 2026. This guide covers technical analysis tools that can help you make better trading decisions.",
+        "thumbnail": "images/best-crypto-rdi.png"
+    },
+    {
+        "path": "Deploy-Applications",
+        "title": "Deploy-Applications: Free Hosting Services for Your Telegram Bots in 2026",
+        "category": "Tools",
+        "date": "Jan 4, 2026",
+        "excerpt": "Discover the best free hosting services for deploying your Telegram bots in 2026. This guide covers various platforms, their features, and how to get started.",
+        "thumbnail": "images/hostbot.png"
+    },
+
+
+
+    {
+        "path": "tools",
+        "title": "The 2026 Internet Toolkit: 20+ Crazy Useful Websites You Didn’t Know You Needed",
+        "category": "Tools",
+        "date": "Jan 7, 2026",
+        "excerpt": "Explore over 20 innovative and useful websites that can enhance your productivity, creativity, and daily life in 2026.",
+        "thumbnail": "images/tools.png"
+    },
+
+
     {
         "path": "binance-fee-explain",
         "title": "Binance Fees Explained: Spot, Futures, Options & Full Comparison With Other Exchanges (2026 Guide)",

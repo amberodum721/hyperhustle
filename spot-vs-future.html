@@ -11,14 +11,7 @@
 <body>
 
 <header>
-    <nav>
-        <a href="index" class="logo">Hyper Hustle</a>
-        <ul class="nav-links">
-            <li><a href="index" class="active">Home</a></li>
-            <li><a href="about">Deploy Application</a></li>
-            <li><a href="tools">Tools</a></li>
-        </ul>
-    </nav>
+
 </header>
 
 <div class="container">
@@ -299,40 +292,11 @@
 </div>
 
 <footer>
-    <div class="footer-content">
-        <div class="footer-links">
-            <a href="index">Home</a>
-            <a href="about">About Us</a>
-            <a href="contact">Contact</a>
-            <a href="dmca">DMCA</a>
-            <a href="terms-and-conditions">Terms and Conditions</a>
-            <a href="disclaimer">Disclaimer</a>
-        </div>
-        <p class="copyright">&copy; 2026 HyperHustle. All rights reserved.</p>
-    </div>
+
 </footer>
 
 <script src="widgets.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    if (typeof POST_DATA !== 'undefined') {
-        const recentContainer = document.getElementById('recent-posts-widget');
-        const catContainer = document.getElementById('categories-widget');
-
-        recentContainer.innerHTML = POST_DATA.slice(0, 5).map(post => `
-            <div class="post-card">
-                <img src="${post.thumbnail}" class="post-thumbnail">
-                <h3 class="post-title"><a href="${post.path}">${post.title}</a></h3>
-            </div>
-        `).join('');
-
-        const categories = [...new Set(POST_DATA.map(p => p.category))];
-        catContainer.innerHTML = categories.map(cat => `
-            <li><a href="index?filter=${cat.toLowerCase()}">${cat}</a></li>
-        `).join('');
-    }
-});
-</script>
+<script src="loader.js"></script>
 
 </body>
 </html>

@@ -13,10 +13,10 @@
 <body>
     <header>
         <nav>
-            <a href="/" class="logo">Hyper Hustle</a>
+            <a href="index" class="logo">Hyper Hustle</a>
             <ul class="nav-links">
                 <li><a href="index" class="active">Home</a></li>
-                <li><a href="about">Deploy Application</a></li>
+                <li><a href="Deploy-Applications">Deploy Application</a></li>
                 <li><a href="tools">Tools</a></li>
             </ul>
         </nav>
@@ -61,26 +61,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 const blogContainer = document.getElementById('blog-list');
+const POSTS_PER_PAGE = 5;
 
 function renderBlogList() {
     const urlParams = new URLSearchParams(window.location.search);
     const filter = urlParams.get('filter');
+    const currentPage = parseInt(urlParams.get('page')) || 1;
 
-    // Filter using the central POST_DATA from widgets.js
+    // 1. Filter posts
     const filteredPosts = filter 
         ? POST_DATA.filter(post => post.category.toLowerCase() === filter.toLowerCase())
         : POST_DATA;
@@ -90,10 +79,16 @@ function renderBlogList() {
         return;
     }
 
-    // Display "Showing category: X" if filter is active
-    let headerHtml = filter ? `<h2 style="margin-bottom:20px; color:var(--primary-color);">Category: ${filter.charAt(0).toUpperCase() + filter.slice(1)}</h2>` : '';
+    // 2. Calculate Pagination
+    const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+    const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+    const paginatedPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
-    blogContainer.innerHTML = headerHtml + filteredPosts.map(blog => `
+    // 3. Render Header
+    let contentHtml = filter ? `<h2 style="margin-bottom:20px; color:var(--primary-color);">Category: ${filter.charAt(0).toUpperCase() + filter.slice(1)}</h2>` : '';
+
+    // 4. Render Posts
+    contentHtml += paginatedPosts.map(blog => `
         <div class="blog-card">
             <img src="${blog.thumbnail}" class="blog-thumbnail">
             <div class="blog-content">
@@ -104,14 +99,35 @@ function renderBlogList() {
             </div>
         </div>
     `).join('');
+
+    // 5. Build Pagination UI
+    if (totalPages > 1) {
+        let paginationHtml = `<div class="pagination">`;
+        
+        // Prev button
+        if (currentPage > 1) {
+            paginationHtml += `<a href="?${filter ? 'filter=' + filter + '&' : ''}page=${currentPage - 1}" class="prev-next">Prev</a>`;
+        }
+
+        // Page numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const activeClass = i === currentPage ? 'active' : '';
+            paginationHtml += `<a href="?${filter ? 'filter=' + filter + '&' : ''}page=${i}" class="page-num ${activeClass}">${i}</a>`;
+        }
+
+        // Next button
+        if (currentPage < totalPages) {
+            paginationHtml += `<a href="?${filter ? 'filter=' + filter + '&' : ''}page=${currentPage + 1}" class="prev-next">Next</a>`;
+        }
+
+        paginationHtml += `</div>`;
+        contentHtml += paginationHtml;
+    }
+
+    blogContainer.innerHTML = contentHtml;
 }
 
-// Ensure POST_DATA is loaded before rendering
 window.onload = renderBlogList;
-
-
-
-
 
     </script>
 
