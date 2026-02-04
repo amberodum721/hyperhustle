@@ -647,3 +647,45 @@ footer {
 .pagination .prev-next {
     font-weight: 600;
 }
+        /* Layout Fixes for 3-Column View */
+        .container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Left Side Ad Styling */
+        #left-ad-container {
+            flex: 0 0 160px;
+            position: sticky;
+            top: 20px;
+        }
+
+        /* Middle Content Styling */
+        #blog-list {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Right Sidebar Styling */
+        aside {
+            flex: 0 0 300px;
+        }
+
+        .sidebar-ad {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Mobile Fix: Hide side ads on phones to prevent layout breaking */
+        @media (max-width: 1024px) {
+            #left-ad-container, aside {
+                display: none;
+            }
+            .container {
+                flex-direction: column;
+            }
+        }
