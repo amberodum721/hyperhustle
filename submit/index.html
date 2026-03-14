@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Submit a Tool – CoreLinks</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+.sf label{display:block;font-weight:600;font-size:.82rem;margin-bottom:6px;color:var(--text)}
+.sf input,.sf select,.sf textarea{width:100%;background:var(--bg3);border:1.5px solid var(--border);border-radius:9px;padding:11px 15px;color:var(--text);font-family:var(--fh);font-size:.88rem;outline:none;transition:border-color .2s,box-shadow .2s;margin-bottom:16px}
+.sf input:focus,.sf select:focus,.sf textarea:focus{border-color:var(--accent);box-shadow:var(--glow)}
+.sf select option{background:var(--bg3)}
+.sf textarea{min-height:90px;resize:vertical}
+.sf button{background:var(--accent);color:#fff;font-weight:800;font-size:.9rem;padding:13px 30px;border:none;border-radius:9px;cursor:pointer;width:100%;transition:opacity .2s}
+.sf button:hover{opacity:.85}
+</style>
+</head>
+<body>
+<div id="top-ad"></div><div id="topbar"></div>
+<div style="max-width:580px;margin:0 auto;padding:60px 1.5rem 80px">
+<div style="margin-bottom:28px">
+<div style="font-family:var(--fm);font-size:.67rem;color:var(--accent2);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px">🚀 Contribute</div>
+<h1 style="font-size:1.8rem;font-weight:800;letter-spacing:-.5px;margin-bottom:8px">Submit a Free Tool</h1>
+<p style="color:var(--muted2);font-size:.86rem;line-height:1.65">Know a great free tool we're missing? Submit it below and help thousands of users find amazing free software.</p>
+</div>
+<div class="ad-inline"><div class="ad-box ad-728" style="max-width:100%">Ads</div></div>
+<div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-top:10px">
+<form class="sf" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <div><label>Tool Name *</label><input type="text" name="tool_name" placeholder="e.g. Bitwarden" required/></div>
+  <div><label>URL *</label><input type="url" name="url" placeholder="https://example.com" required/></div>
+  <div><label>Category *</label>
+  <select name="category" required>
+    <option value="">Select a category…</option>
+    <option>Adblock / Privacy</option><option>Artificial Intelligence</option><option>Movies / TV / Anime</option>
+    <option>Music / Podcasts</option><option>Gaming / Emulation</option><option>Books / Comics</option>
+    <option>Downloading</option><option>Torrenting</option><option>Educational</option>
+    <option>Android / iOS</option><option>Linux / macOS</option><option>Miscellaneous</option>
+    <option>System Tools</option><option>File Tools</option><option>Internet Tools</option>
+    <option>Image Tools</option><option>Video Tools</option><option>Audio Tools</option>
+    <option>Developer Tools</option><option>Text Tools</option><option>Social Media Tools</option>
+  </select></div>
+  <div><label>Description * (1–2 sentences max)</label><textarea name="description" placeholder="What does this tool do and why is it great?" required></textarea></div>
+  <div><label>Your Email (optional)</label><input type="email" name="email" placeholder="you@example.com"/></div>
+  <button type="submit">Submit Tool →</button>
+</form>
+</div>
+</div>
+<div id="footer-ad"></div><div id="footer"></div>
+<script src="../js/layout.js"></script>
+<script>renderTopAd();renderTopbar();renderFooter();</script>
+</body></html>
